@@ -1,0 +1,205 @@
+{
+  "swagger": "2.0",
+  "info": {
+
+  },
+  "host": "localhost:6005",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Portfolio",
+      "description": "APIs for Portfolio"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/portfolio": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Fetch portfolio",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ]
+      }
+    },
+    "/portfolio/holdings": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Fetch holdings",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ]
+      }
+    },
+    "/portfolio/returns": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Fetch returns",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ]
+      }
+    },
+    "/portfolio/stock": {
+      "get": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Fetch all Stocks",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ]
+      },
+      "post": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Create new stock",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "title",
+            "in": "formData",
+            "description": "Title of note",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/portfolio/trade": {
+      "post": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Create new trade",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "stockId",
+            "in": "formData",
+            "description": "Stock Id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type [buy, sell]",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "description": "Price",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "quantity",
+            "in": "formData",
+            "description": "Quantity",
+            "type": "number",
+            "required": true
+          },
+          {
+            "name": "date",
+            "in": "formData",
+            "description": "Unix Timestamp",
+            "type": "number",
+            "required": true
+          }
+        ]
+      }
+    },
+    "/portfolio/trade/{id}": {
+      "put": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Update trade",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Note id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "stockId",
+            "in": "formData",
+            "description": "Stock Id",
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "Type [buy, sell]",
+            "type": "string"
+          },
+          {
+            "name": "price",
+            "in": "formData",
+            "description": "Price",
+            "type": "number"
+          },
+          {
+            "name": "quantity",
+            "in": "formData",
+            "description": "Quantity",
+            "type": "number"
+          },
+          {
+            "name": "date",
+            "in": "formData",
+            "description": "Unix Timestamp",
+            "type": "number"
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Portfolio"
+        ],
+        "summary": "Delete trade",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Note id",
+            "type": "string",
+            "required": true
+          }
+        ]
+      }
+    }
+  }
+}
